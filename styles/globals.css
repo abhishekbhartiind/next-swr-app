@@ -7,3 +7,18 @@ input,
 label {
   color: teal;
 }
+
+.user-card {
+  height: auto;
+  padding: 2%;
+  background-color: rgb(255, 255, 255);
+  border-right: 1px solid teal;
+  margin: 5px;
+}
+
+.male {
+  border: 2px solid greenyellow;
+}
+.female {
+  border: 2px solid pink;
+}
