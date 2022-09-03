@@ -25,3 +25,28 @@ yarn dev
 import useSWR from 'swr'
 const { data } = useSWR('https://www.some-link.com', (apiURL: string) => fetch(apiURL).then(res => res.json())
 ```
+
+### Material Design
+
+```bash
+yarn add materialize-css
+yarn add -D @types/materialize-css
+```
+
+In App.tsx
+
+```bash
+import "materialize-css/dist/css/materialize.min.css"
+useEffect(() => {
+  const M = require("materialize-css")
+  M.AutoInit()
+}, [])
+```
+
+### Form Validator
+
+With `react-hook-form yup`
+
+```bash
+yarn add react-hook-form yup @hookform/resolvers
+```

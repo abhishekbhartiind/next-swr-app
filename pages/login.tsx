@@ -25,7 +25,7 @@ const Login = () => {
     resolver: yupResolver(validationSchema),
   })
 
-  const handleLogin = (data: ILogin) => {
+  const handleLogin = async (data: ILogin) => {
     console.log('login form data => ', data)
   }
 
