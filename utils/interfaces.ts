@@ -9,3 +9,9 @@ export interface IRegister {
   username: string
   password: string
 }
+
+export interface PostProps {
+  title: string
+  body: string
+  id: number
+}

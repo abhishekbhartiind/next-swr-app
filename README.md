@@ -26,6 +26,9 @@ import useSWR from 'swr'
 const { data } = useSWR('https://www.some-link.com', (apiURL: string) => fetch(apiURL).then(res => res.json())
 ```
 
+A `Key`: a string that serves as the unique identifier for the data we are fetching. This is usually the API URL we are calling.
+A `fetcher`: a function that returns the fetched data.
+
 ### Material Design
 
 ```bash

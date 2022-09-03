@@ -1,5 +1,5 @@
-import React, { Fragment } from "react"
-import Link from "next/link"
+import React, { Fragment } from 'react'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="nav-wrapper">
           <div className="container">
             <Link href="/">
-              <a className="brand-logo">Navbar</a>
+              <a className="brand-logo">Demo</a>
             </Link>
             <ul className="right">
               <li>

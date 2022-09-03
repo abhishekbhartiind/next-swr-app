@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <Layout>
-      <div className="container">
+      <div className="container white">
         <p className="flow-text center grey-text">Login</p>
         <div className="row"></div>
         <form className="col s12" onSubmit={handleSubmit(handleLogin)} autoComplete="off">
