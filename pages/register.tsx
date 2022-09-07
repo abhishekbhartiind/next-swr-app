@@ -48,7 +48,6 @@ const Register = () => {
                 className="validate"
                 {...register('name')}
                 placeholder="Enter your Name"
-                // required
               />
               {errors.name && <span className="helper-text red-text">{errors.name.message}</span>}
             </div>
@@ -59,7 +58,6 @@ const Register = () => {
                 className="validate"
                 {...register('email')}
                 placeholder="Enter your Email"
-                // required
               />
               {errors.email && <span className="helper-text red-text">{errors.email.message}</span>}
             </div>
@@ -70,7 +68,6 @@ const Register = () => {
                 className="validate"
                 {...register('username')}
                 placeholder="Enter your Username"
-                // required
               />
               {errors.username && (
                 <span className="helper-text red-text">{errors.username.message}</span>
@@ -83,7 +80,6 @@ const Register = () => {
                 className="validate"
                 {...register('password')}
                 placeholder="Enter your Password"
-                // required
               />
               {errors.password && (
                 <span className="helper-text red-text">{errors.password.message}</span>
