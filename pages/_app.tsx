@@ -1,7 +1,8 @@
 import 'materialize-css/dist/css/materialize.min.css'
 import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
-import '../styles/globals.css'
+import Layout from '@components/Layout'
+import '@styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -9,7 +10,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     M.AutoInit()
   }, [])
 
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default MyApp

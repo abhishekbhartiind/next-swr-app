@@ -2,7 +2,6 @@ import axios from 'axios'
 import React from 'react'
 import useSWR from 'swr'
 import Image from 'next/image'
-import Layout from '../components/Layout'
 
 export default function Users() {
   const [count, setCount] = React.useState<number>(0)
@@ -15,7 +14,7 @@ export default function Users() {
   if (!data) <h1>Loading...</h1>
 
   return (
-    <Layout>
+    <>
       <div className="col s12">
         {data &&
           data.results.map((item: any) => (
@@ -43,6 +42,6 @@ export default function Users() {
       <div className="btn">
         <button onClick={() => setCount(count + 3)}>Load More Users</button>
       </div>
-    </Layout>
+    </>
   )
 }

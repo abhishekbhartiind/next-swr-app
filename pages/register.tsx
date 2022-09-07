@@ -1,11 +1,9 @@
 import React, { useMemo } from 'react'
+import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-
-import Layout from '../components/Layout'
-import { requiredValidationMessage } from '../utils/constants'
-import { IRegister } from '../utils/interfaces'
+import { requiredValidationMessage } from '@utils/constants'
+import { IRegister } from '@utils/interfaces'
 
 const Register = () => {
   const validationSchema = useMemo(
@@ -35,65 +33,63 @@ const Register = () => {
   }
 
   return (
-    <Layout>
-      <div className="container">
-        <p className="flow-text center grey-text">Register</p>
-        <div className="row"></div>
-        <form className="col s12" onSubmit={handleSubmit(handleRegister)} autoComplete="off">
-          <div className="row">
-            <div className="input-field col s6">
-              <input
-                id="name"
-                type="text"
-                className="validate"
-                {...register('name')}
-                placeholder="Enter your Name"
-              />
-              {errors.name && <span className="helper-text red-text">{errors.name.message}</span>}
-            </div>
-            <div className="input-field col s6">
-              <input
-                id="email"
-                type="text"
-                className="validate"
-                {...register('email')}
-                placeholder="Enter your Email"
-              />
-              {errors.email && <span className="helper-text red-text">{errors.email.message}</span>}
-            </div>
-            <div className="input-field col s6">
-              <input
-                id="username"
-                type="text"
-                className="validate"
-                {...register('username')}
-                placeholder="Enter your Username"
-              />
-              {errors.username && (
-                <span className="helper-text red-text">{errors.username.message}</span>
-              )}
-            </div>
-            <div className="input-field col s6">
-              <input
-                id="password"
-                type="password"
-                className="validate"
-                {...register('password')}
-                placeholder="Enter your Password"
-              />
-              {errors.password && (
-                <span className="helper-text red-text">{errors.password.message}</span>
-              )}
-            </div>
-            <div className="input-field col s6">
-              <button className="btn grey waves-effect waves-light" type="submit">
-                Submit
-              </button>
-            </div>
+    <div className="container">
+      <p className="flow-text center grey-text">Register</p>
+      <div className="row"></div>
+      <form className="col s12" onSubmit={handleSubmit(handleRegister)} autoComplete="off">
+        <div className="row">
+          <div className="input-field col s6">
+            <input
+              id="name"
+              type="text"
+              className="validate"
+              {...register('name')}
+              placeholder="Enter your Name"
+            />
+            {errors.name && <span className="helper-text red-text">{errors.name.message}</span>}
           </div>
-        </form>
-      </div>
-    </Layout>
+          <div className="input-field col s6">
+            <input
+              id="email"
+              type="text"
+              className="validate"
+              {...register('email')}
+              placeholder="Enter your Email"
+            />
+            {errors.email && <span className="helper-text red-text">{errors.email.message}</span>}
+          </div>
+          <div className="input-field col s6">
+            <input
+              id="username"
+              type="text"
+              className="validate"
+              {...register('username')}
+              placeholder="Enter your Username"
+            />
+            {errors.username && (
+              <span className="helper-text red-text">{errors.username.message}</span>
+            )}
+          </div>
+          <div className="input-field col s6">
+            <input
+              id="password"
+              type="password"
+              className="validate"
+              {...register('password')}
+              placeholder="Enter your Password"
+            />
+            {errors.password && (
+              <span className="helper-text red-text">{errors.password.message}</span>
+            )}
+          </div>
+          <div className="input-field col s6">
+            <button className="btn grey waves-effect waves-light" type="submit">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   )
 }
 

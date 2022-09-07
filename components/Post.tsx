@@ -1,4 +1,4 @@
-import { PostProps } from '../utils/interfaces'
+import { PostProps } from '@utils/interfaces'
 
 const Post = (post: PostProps) => {
   const { title, body, id }: PostProps = post
