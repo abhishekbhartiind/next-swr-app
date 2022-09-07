@@ -10,7 +10,7 @@ const Sample: NextPage = () => {
   if (!posts) return <h3 className="center">Loading!...</h3>
 
   return (
-    <div className="section white">
+    <div className="section">
       <main className="container">
         <div className="col s12">
           {posts.map((post: PostProps) => (

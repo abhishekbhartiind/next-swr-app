@@ -1,6 +1,6 @@
 body {
-  background-color: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 input,
@@ -31,4 +31,9 @@ label {
 
 .btn {
   margin-top: 1rem;
+}
+
+.bg-dark {
+  background: black;
+  padding: 10px;
 }

@@ -4,10 +4,10 @@ import PostCard from '@components/PostCard'
 
 const Home: NextPage = () => {
   return (
-    <div className="section white">
+    <div className="section">
       <main className="container">
         <div className="col s12">
-          <h4>useSWR Hook ⛳</h4>
+          <h4 className="center">useSWR Hook ⛳</h4>
           <CreatePost />
 
           <h4>Posts</h4>

@@ -28,7 +28,7 @@ const Login = () => {
   }
 
   return (
-    <div className="container white">
+    <div className="container">
       <p className="flow-text center grey-text">Login</p>
       <div className="row"></div>
       <form className="col s12" onSubmit={handleSubmit(handleLogin)} autoComplete="off">
