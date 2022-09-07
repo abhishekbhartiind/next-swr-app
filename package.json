@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "json-server": "json-server db.json -d 2000 -p 3001 -w db.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
