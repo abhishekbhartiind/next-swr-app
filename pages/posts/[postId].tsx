@@ -35,18 +35,22 @@ const index = () => {
   }, [postId])
 
   return (
-    <div>
-      {post ? <PostCard post={post} /> : <Loader />}
+    <div className="section">
+      <div className="container">
+        <div className="col s12">
+          {post ? <PostCard post={post} /> : <Loader />}
 
-      <CreateComment />
+          <CreateComment />
 
-      <h4>Comments</h4>
+          <h4>Comments</h4>
 
-      {!comments && <Loader />}
+          {!comments && <Loader />}
 
-      {comments?.map((comment, i) => (
-        <CommentCard key={i} comment={comment} />
-      ))}
+          {comments?.map((comment, i) => (
+            <CommentCard key={i} comment={comment} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
