@@ -6,39 +6,45 @@ import { IComment, IPost } from '../../types'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import Loader from '@components/Loader'
+import useSWR from 'swr'
 
 const index = () => {
   const {
     query: { postId },
   } = useRouter()
-  const [comments, setComments] = useState<IComment[]>()
-  const [post, setPost] = useState<IPost>()
+  // const [comments, setComments] = useState<IComment[]>()
+  // const [post, setPost] = useState<IPost>()
 
-  //! 3 👇
-  const getPost = async () => {
-    const { data } = await axios(`/posts/${postId}`)
-    setPost(data)
-  }
+  // //! 3 👇
+  // const getPost = async () => {
+  //   const { data } = await axios(`/posts/${postId}`)
+  //   setPost(data)
+  // }
 
-  //! 2 👇
+  // //! 2 👇
 
-  const getComments = async () => {
-    const { data } = await axios(`/posts/${postId}/comments`)
-    setComments(data)
-  }
+  // const getComments = async () => {
+  //   const { data } = await axios(`/posts/${postId}/comments`)
+  //   setComments(data)
+  // }
 
-  useEffect(() => {
-    if (postId) {
-      getComments()
-      getPost()
-    }
-  }, [postId])
+  // useEffect(() => {
+  //   if (postId) {
+  //     getComments()
+  //     getPost()
+  //   }
+  // }, [postId])
+
+  const { data: comments, error } = useSWR<IComment[]>(
+    `/posts/${postId}/comments?_sort=createdAt&_order=desc`,
+    (url: string) => axios(url).then((res) => res.data),
+  )
 
   return (
     <div className="section">
       <div className="container">
         <div className="col s12">
-          {post ? <PostCard post={post} /> : <Loader />}
+          {/* {post ? <PostCard post={post} /> : <Loader />} */}
 
           <CreateComment />
 
