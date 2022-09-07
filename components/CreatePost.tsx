@@ -1,12 +1,14 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { mutate } from 'swr'
 
-const CreatePost = ({ setPosts }: any) => {
+const CreatePost = () => {
   const [content, setContent] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const id = Math.floor(Math.random() * 10000)
+
     const { data } = await axios('/posts', {
       method: 'POST',
       data: {
@@ -14,7 +16,9 @@ const CreatePost = ({ setPosts }: any) => {
         content: `${content} with ${id}`,
       },
     })
-    setPosts((posts: any) => [...posts, data])
+    //setPosts((posts: any) => [...posts, data])
+    //(posts: any) => [...posts, data], false
+    mutate('/posts?_sort=createdAt&_order=desc')
     setContent('')
   }
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import type { AppProps } from 'next/app'
 import Layout from '@components/Layout'
 import '@styles/globals.css'
+import { SWRConfig } from 'swr'
 
 axios.defaults.baseURL = 'http://localhost:3001'
 
@@ -14,9 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SWRConfig value={{ fetcher: (url: string) => axios(url).then((res) => res.data) }}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SWRConfig>
   )
 }
 

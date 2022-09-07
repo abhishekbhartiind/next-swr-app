@@ -37,7 +37,6 @@ const index = () => {
 
   const { data: comments, error } = useSWR<IComment[]>(
     `/posts/${postId}/comments?_sort=createdAt&_order=desc`,
-    (url: string) => axios(url).then((res) => res.data),
   )
 
   return (
